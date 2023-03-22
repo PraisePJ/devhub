@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <style media="screen">
+    body{
+      margin: 0px;
+      font-family: fantasy;
+      background-color: #e6f0ff;
+    }
+    #menu:hover{
+      background-color: white;
+      color: #1e79d9;
+    }
+    #menu{
+      background-color: #1e79d9;
+      color: white;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="" style="width: 100%; height: 50px; background-color: #1e79d9">
+      <div class="logo">
+        <img style="margin: 0 10px" src="{% static 'images/logo.png' %}" alt="" height="50px">
+      </div>
+      <div class="nav-items">
+
+      </div>
+    </div>
+    <div align="center" class="mt-2">
+      <h1><b>Results Page</b> </h1>
+    </div>
+    <hr>
+    <div class="d-flex ps-2 pe-2">
+      <div class="" style="width: 30%;">
+        <a href="{% url 'home' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Home</button></a><br>
+        <a href="{% url 'student-portal' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Dashboard</button></a><br>
+        <a href="{% url 'registration' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Registration</button></a><br>
+        <button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Registered Courses</button><br>
+        <a href="{% url 'project' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Projects</button></a><br>
+        <a href="{% url 'results-page' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Check Results</button></a>
+      </div>
+      <div align="center" class="" style="width: 70%">
+        <a href="">
+          <img src="{{result.image.url}}" alt="" width="80%">
+        </a>
+      </div>
+      <div align="right" class="" style="width: 150px; height: 150px; background-color: white">
+        <img src="{% static 'images/dune.png' %}" alt="" width="100%" height="100%">
+      </div>
+    </div>
+  </body>
+</html>

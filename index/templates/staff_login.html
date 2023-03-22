@@ -1,0 +1,35 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% block banner %}
+<div class="d-lg-flex d-md-flex d-sm-center-block" style="width: 100%; background-color: #1e79d9;">
+  <div class="" style="">
+    <img style="margin: 0 20px" src="{% static 'images/logo.png' %}" alt="" height="50px">
+  </div>
+</div>
+{% endblock %}
+{% block login %}
+<style media="screen">
+
+</style>
+<div class="" style=" width: 100%; background-color: #1e79d9; padding: 70px 15% 100px 15%;">
+  <h1 style="color: white;" align="center"><b>Staff Login Portal</b></h1>
+  <div class="d-sm-block d-md-flex d-lg-flex" align="center" style="flex-box: space-between; border-radius: 10px; background-color: #fff;  padding: 50px">
+    <div class="" align="left">
+      <img src="{% static 'images/staff.png' %}" alt="" width="200px" height="200px">
+    </div>
+    <p class="p-sm-5 p-md-0 p-lg-0"></p>
+    <div class="ps-sm-0 ps-md-5 ps-lg-5" align="right">
+      <form class="" action="index.html" method="post">
+        {% csrf_token %}
+        <label class="" for="dev_no">Staff ID:    </label><br>
+        <input class="p-2 m-2" type="text" name="dev_no" value="" style="width: 200px" ><br>
+        <label class="" for="password">Password:    </label><br>
+        <input class="p-2 m-2" type="password" name="password" value="" style="width: 200px"><br>
+        <div class="">
+          <button class="btn btn-primary m-2" type="button" name="button">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

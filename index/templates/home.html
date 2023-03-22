@@ -1,0 +1,139 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<style media="screen">
+  #apply:hover{
+    background-color: white;
+    color: #1e70d0;
+    border: none;
+  }
+  #apply{
+    background-color: transparent;
+    color: white;
+    border: solid 1px #1e79d9;
+  }
+  #login{
+    background-color: transparent;
+    color: white;
+    border: solid 1px #1e79d9;
+  }
+  #login:hover{
+    background-color: white;
+    color: #1e70d0;
+    border: none;
+  }
+  .modal{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content{
+    width: 500px;
+    height: 600px;
+    margin: 15%;
+    font-family: fantasy;
+    display: block;
+  }
+</style>
+{% block banner %}
+<div class="" style="background-size: cover; background-image: url('{% static 'images/books.png' %}'); width: 100%; height: 600px; background-repeat: no-repeat">
+  <div class="d-flex" style="width: 100%; height: 100px; padding: 0 0 0 10px">
+    <div class="logo" style="width: 90%">
+      <img style="margin: 20px" src="{% static 'images/logo.png' %}" alt="" height="50px">
+    </div>
+    <div align="right" class="nav-items d-flex">
+      <button id="apply" style="border-radius: 10px; padding: 10px 25px 10px 25px; margin: 20px; height: 46px" type="button" name="button">Apply</button>
+      <a href="#loginform" style=" height: 70px"><button id="login" style="border-radius: 10px; padding: 10px 25px 10px 25px; margin: 20px;" type="button" name="button">Login</button></a>
+    </div>
+  </div>
+  <div align="center" class="" style="height: 600px; width: 100%">
+    <span style="color: white; font-size: 70px">Welcome to the <br> Developer Hub Academy</span>
+  </div>
+</div>
+{% endblock %}
+<div align="center" id="modal" class="modal">
+  <div align="center" class="modal-content p-5">
+    <h3><b>APPLY</b></h3>
+    <div class="mb-4" style="height: 3px; width: 70px; background-color: #1e79d9">
+
+    </div>
+    <div align="center" class="d-block">
+      <form class="" action="" method="post">
+        {% csrf_token %}
+        <input style="width: 100%; height: 50px; padding-left: 10px; border-radius: 25px; border: solid 1px;" type="text" name="" value="" placeholder="First Name..."><br>
+        <input style="width: 100%; height: 50px; padding-left: 10px; border-radius: 25px; border: solid 1px;" class="mt-5" type="text" name="" value="" placeholder="Last Name...">
+        <input style="width: 100%; border-radius: 25px; height: 50px" class="mt-5 btn btn-outline-primary" type="submit" value="Submit Application"/>
+      </form>
+    </div>
+  </div>
+</div>
+{% block about %}
+<div align="center" class="pt-5" style="margin: 20px 0 20px 0">
+  <div class="" style="font-family: helvetica; color: #666666">
+    <h1><b>About</b></h1>
+  </div>
+  <div class="" style="height: 3px; width: 70px; background-color: #1e79d9">
+
+  </div>
+</div>
+<div class="d-flex" style="width: 100%">
+  <div class="p-5 m-5" style="border-radius: 40px 0px 0px 40px; width: 50%; background-color: #eeeeee">
+    <article class="text-lead" style="width: 80%; font-family: helvetica; font-size: 30px; color: #121212">
+      The DHA is an academy established with the purpose of giving out concise training to young developers <br>
+      Here at the DHA , we strive to give our students the best realworld experiences before they actually go out into the real world
+    </article>
+  </div>
+  <div class="" style="width: 50%; margin: 70px; border: transparent; ">
+    <img style="border-radius: 0 20px 20px 0" src="{% static 'images/pexel-hoodgirl.jpg' %}" alt="" height="450px" width="100%">
+  </div>
+</div>
+{% endblock %}
+{% block contact %}
+<div align="center" class="pt-5" style="margin: 20px 0 20px 0">
+  <div class="" style="font-family: helvetica; color: #666666">
+    <h1><b>Contact</b></h1>
+  </div>
+  <div class="" style="height: 3px; width: 70px; background-color: #1e79d9">
+
+  </div>
+</div>
+<div class="d-flex" style="width: 100%">
+
+  <div class="" style="width: 50%; margin: 70px; border: transparent; ">
+    <img style="border-radius: 0 20px 20px 0" src="{% static 'images/pexel-guy.jpg' %}" alt="" height="450px" width="100%">
+  </div>
+  <div class="p-5 m-5" style="border-radius: 40px 0px 0px 40px; width: 50%; background-color: #e6f0ff">
+    <article class="text-lead" style="width: 80%; font-family: helvetica; font-size: 30px; color: #121212">
+      If in any case you require more info or probably have a feedback or idea of how we can better serve you
+      Please do contact us:
+      <b>devhubbr@gmail.com</b>
+    </article>
+  </div>
+</div>
+{% endblock %}
+{% block login %}
+<a href="#" name="loginform"></a>
+<div id="loginform" style=" width: 100%; background-color: #1e79d9; padding: 70px 15% 100px 15%;">
+  <h1 style="color: white;" align="center"><b>Student Login Portal</b></h1>
+  <div class="d-sm-block d-md-flex d-lg-flex" align="center" style="flex-box: space-between; border-radius: 10px; background-color: #fff;  padding: 50px">
+    <div class="" align="left">
+      <img src="{% static 'images/staff.png' %}" alt="" width="200px" height="200px">
+    </div>
+    <p class="p-sm-5 p-md-0 p-lg-0"></p>
+    <div class="ps-sm-0 ps-md-5 ps-lg-5" align="right">
+        <form class="" action="" method="post">
+          {% csrf_token %}
+          <label class="" for="dev_no">Developer No:    </label><br>
+          <input class="p-2 m-2" type="text" name="dev_no" value="" style="width: 200px" ><br>
+          <label class="" for="password">Password:    </label><br>
+          <input class="p-2 m-2" type="password" name="password" value="" style="width: 200px"><br>
+          <div class="">
+            <input class="btn btn-primary m-2" type="submit" name="" value="Login">
+            <a href="{% url 'staff-login' %}"><button class="btn btn-primary m-2" type="button" name="button">Staff Login</button></a>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<script type="text/javascript" src="{% static 'js/app.js' %}">
+
+</script>

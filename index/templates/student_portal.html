@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <style media="screen">
+      #menu:hover{
+        background-color: white;
+        color: #1e79d9;
+      }
+      #menu{
+        background-color: #1e79d9;
+        color: white;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body style="background-color: #e6f0ff">
+    <div class="" style="width: 100%; height: 50px; background-color: #1e79d9">
+      <div class="logo">
+        <img style="margin: 0 10px" src="{% static 'images/logo.png' %}" alt="" height="50px">
+      </div>
+      <div class="nav-items">
+
+      </div>
+    </div>
+    <div class="d-flex" style="height: 500px">
+
+      <div class="ps-2 pe-2" style="width: 100%;">
+        <div class="d-flex" style="width: 100%; height: 50px; padding-left: 20px;">
+          {% if request.user.is_authenticated %}
+          <div class="" style="width: 30%; height: 100%; padding-top: 20px">
+            <h4>Welcome {{user}}</h4>
+          </div>
+          <div class="" align="right" style="width: 70%; height: 100%; padding-top: 15px; padding-right: 20px">
+            <button type="button" name="button" style="border-radius: 5px; color: white; border: none; background-color: #1e79d9; float: right; padding: 10px">Logout</button>
+          </div>
+          {% endif %}
+        </div>
+        <hr>
+        <div class="d-flex" style="width: 100%; height: 450px; padding: 0 0 ">
+          <div class="" style="width: 30%; background-color: ; padding-top: ">
+            <a href="{% url 'home' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Home</button></a><br>
+            <a href="{% url 'registration' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Registration</button></a><br>
+            <button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Registered Courses</button><br>
+            <a href="{% url 'project' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Projects</button></a><br>
+            <a href="{% url 'results-page' %}"><button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Check Results</button></a><br>
+            <button id="menu" type="button" name="button" style="height: 50px; width: 100%; border: none">Student Profile Update</button>
+          </div>
+          <div class="d-flex" style="width: 80%;">
+            <div class="d-block w-100 ms-2 me-2 pb-5" style="border: solid 1px; height: 450px">
+              <div class="p-2 bg-dark text-light" style="height: 50px; width: 100%">
+                <h5> <b>Student Information</b> </h5>
+              </div>
+              <div class="" style="width: 100%; height: 100%;">
+                <div class="d-block text-secondary pt-3 ps-5" style="color: white; /*padding: 50px 0 0 50px">
+                  <label for="" style="display: inline-flex;">NAME: <p style="width: 200px; height: 30px"></p>{{data.name}}</label><br>
+                  <p></p>
+                  <label for="" style="display: inline-flex;">DEVELOPER NO: <p style="width: 131px; height: 30px"></p>{{data.developer_no}}</label><br>
+                  <p></p>
+                  <label for="" style="display: inline-flex;">DEPARTMENT: <p style="width: 145px; height: 30px"></p>{{data.department}}</label><br>
+                  <p></p>
+                  <label for="" style="display: inline-flex;">LEVEL: <p style="width: 200px; height: 30px"></p>{{data.level}}</label><br>
+                  <p></p>
+                  <label for="" style="display: inline-flex;">DEGREE: <p style="width: 185px; height: 30px"></p>{{data.degree}}</label><br>
+                  <p></p>
+                  <label style="display: inline-flex;">EMAIL: <p style="width: 200px; height: 30px"></p>{{data.email}}</label>
+                </div>
+              </div>
+            </div>
+            <div align="right" class="" style="width: 150px; height: 150px; background-color: white">
+              <img src="{% static 'images/dune.png' %}" alt="" width="100%" height="100%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
